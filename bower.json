@@ -1,0 +1,29 @@
+{
+  "name": "cf-html",
+  "version": "0.0.1",
+  "homepage": "https://cotafer.com",
+  "authors": [
+    "Sopheak <sopheak.peas@gmail.com>"
+  ],
+  "description": "HTML version for CF website",
+  "moduleType": "globals",
+  "main": [
+    "sass/theme.scss"
+  ],
+  "keywords": [
+    "html5_boilerplate",
+    "boostrap",
+    "sass"
+  ],
+  "license": "GPL-2.0",
+  "ignore": [
+    "**/.*",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  },
+  "_source": "https://github.com/sptheme/cf-html",
+  "_target": "~0.0.1",
+  "_originalSource": "cf-html"
+}
