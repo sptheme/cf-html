@@ -35,6 +35,17 @@ To work and compile your Sass files on the fly start:
 
 - `$ gulp watch`
 
+Or, to run with Browser-Sync:
+
+- First change the browser-sync options to reflect your environment in the file `/gulpfile.js` in the beginning of the file:
+```javascript
+var browserSyncOptions = {
+    proxy: "localhost/theme_test/", // <----- CHANGE HERE
+    notify: false
+};
+```
+- then run: `$ gulp watch-bs`
+
 Licenses & Credits
 =
 - Font Awesome: http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
