@@ -1,5 +1,5 @@
 # cf-html
-HTML version for CF website
+CF-HTML is a basic starter responsive template that helps you build your own web apps or sites with Bootstrap, and Sass.
 
 ## Basic Features
 
