@@ -12,10 +12,10 @@
 
         <link rel="stylesheet" href="css/theme.min.css">        
     </head>
-<body>
+<body class="full-screen">
 	<div id="page" class="hfeed site">
 		<header id="header" class="site-header" role="banner">
-			<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+			<nav class="navbar navbar-dark bg-inverse">
 			    <a class="navbar-brand" href="#">Project name</a>
 			    <ul class="nav navbar-nav">
 			        <li class="nav-item active">
@@ -27,6 +27,7 @@
 			        <li class="nav-item">
 			            <a class="nav-link" href="#">Contact</a>
 			        </li>
+			        <li class="nav-item"><a id="simple-menu" href="#sidr" class="nav-link">Toggle menu</a></li>
 			    </ul>
 			</nav>
 		</header> <!-- #header -->
@@ -49,12 +50,12 @@
 					        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
 						</main><!-- .site-main -->
 
-						<aside id="secondary" class="sidebar widget-area col-md-4" role="complementary">
-							<h2>Sidebar</h2>
-							<h3>All widgets will goes here...</h3>
-						</aside> <!-- .widget-area -->
-
 					</div><!-- .content-area -->
+
+					<aside id="secondary" class="sidebar widget-area col-md-4" role="complementary">
+						<h2>Sidebar</h2>
+						<h6>All widgets will goes here...</h6>
+					</aside> <!-- .widget-area -->
 					
 				</div> <!-- .row -->
 			</div> <!-- .container -->
@@ -68,6 +69,16 @@
 
 	</div> <!-- #page -->
 
+	<div id="sidr">
+		<ul>
+			<li><a href="#">Hotel</a></li>
+			<li><a href="#">Homestay</a></li>
+			<li><a href="#">Travel Agency</a></li>
+			<li><a href="#">Charity</a></li>
+		</ul>
+	</div> <!-- #sidr -->
+
 	<script src="js/theme.min.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>

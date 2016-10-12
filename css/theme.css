@@ -6848,3 +6848,47 @@ a.text-danger:focus, a.text-danger:hover {
 .fa-fa:before,
 .fa-font-awesome:before {
   content: ""; }
+
+/*!
+ *  Sidr  2.2.1 by @artberri - http://www.berriart.com/sidr/
+ *  License - http://www.berriart.com
+ */
+.sidr {
+  display: block;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 999999;
+  width: 260px;
+  overflow-x: hidden;
+  overflow-y: auto; }
+  .sidr.right {
+    left: auto;
+    right: -260px; }
+  .sidr.left {
+    left: -260px;
+    right: auto; }
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+# STRUCTURE AND LAYOUT
+
+--------------------------------------------------------------*/
+/*-------------------------------------------------------------- 
+ # STRUCTURE AND LAYOUT
+--------------------------------------------------------------*/
+#page {
+  overflow: hidden; }
+
+body.left-sidebar .content-area {
+  float: right; }
+
+/* Full-Width & Full-Screen */
+body.full-width .content-area,
+body.full-width .widget-area,
+body.full-screen .site-content .container {
+  float: none;
+  max-width: 100%;
+  width: 100%; }

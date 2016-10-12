@@ -133,22 +133,32 @@ gulp.task('watch-bs', ['browser-sync', 'watch', 'cssnano'], function () { });
 // Uglifies and concat all JS files into one
 gulp.task('scripts', function() {
   gulp.src([
+    basePaths.dev + 'js/jquery.min.js', // Must be loaded before BS4
+    basePaths.dev + 'js/jquery-migrate.min.js', // Must be loaded before BS4
+
     basePaths.dev + 'js/tether.js', // Must be loaded before BS4
 
     // Start - All BS4 stuff
     basePaths.dev + 'js/bootstrap4/bootstrap.js', 
     // End - All BS4 stuff
+
+    basePaths.dev + 'js/sidr/jquery.sidr.min.js', 
     ])
     .pipe(concat('theme.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./js/'));
 
   gulp.src([
+    basePaths.dev + 'js/jquery.js', // Must be loaded before BS4
+    basePaths.dev + 'js/jquery-migrate.js',
+
     basePaths.dev + 'js/tether.js', // Must be loaded before BS4
 
     // Start - All BS4 stuff
     basePaths.dev + 'js/bootstrap4/bootstrap.js', 
     // End - All BS4 stuff
+
+    basePaths.dev + 'js/sidr/jquery.sidr.js', 
     ])
     .pipe(concat('theme.js'))
     .pipe(gulp.dest('./js/'));
@@ -160,6 +170,14 @@ gulp.task('scripts', function() {
 
 ////////////////// All Bootstrap SASS  Assets /////////////////////////
 gulp.task('copy-assets', function() {
+
+// Copy all jquery JS files 
+    gulp.src(basePaths.node + 'jquery/dist/**/*.js')
+       .pipe(gulp.dest(basePaths.dev + '/js'));
+
+// Copy all jquery-migrate JS files 
+    gulp.src(basePaths.node + 'jquery-migrate/dist/**/*.js')
+       .pipe(gulp.dest(basePaths.dev + '/js'));       
 
 ////////////////// All Bootstrap 4 Assets /////////////////////////
 // Copy all Bootstrap JS files 
@@ -183,10 +201,6 @@ gulp.task('copy-assets', function() {
     gulp.src(basePaths.node + 'jquery/dist/*.js')
         .pipe(gulp.dest(basePaths.dev + '/js'));
 
-// _s JS files
-    gulp.src(basePaths.node + 'underscores-for-npm/js/*.js')
-        .pipe(gulp.dest(basePaths.dev + '/js'));
-
 // Copy Tether JS files
     gulp.src(basePaths.node + 'tether/dist/js/*.js')
         .pipe(gulp.dest(basePaths.dev + '/js'));
@@ -194,6 +208,19 @@ gulp.task('copy-assets', function() {
 // Copy Tether CSS files
     gulp.src(basePaths.node + 'tether/dist/css/*.css')
         .pipe(gulp.dest(basePaths.dev + '/css'));
+
+// Copy Sidr JS files
+    gulp.src(basePaths.node + 'sidr/dist/*.js')
+        .pipe(gulp.dest(basePaths.dev + '/js/sidr/'));
+
+// Copy Sidr SCSS files
+    gulp.src(basePaths.node + 'sidr/src/scss/**/*.scss')
+        .pipe(gulp.dest(basePaths.dev + '/sass/sidr'));
+
+// Copy Sidr CSS files
+    gulp.src(basePaths.node + 'sidr/src/stylesheets/*.css')
+        .pipe(gulp.dest(basePaths.dev + '/css'));        
+
 });
 
 // Run 

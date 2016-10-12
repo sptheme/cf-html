@@ -1,2 +1,28 @@
-// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+// This is an empty scss file for your custom styles
 
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+# STRUCTURE AND LAYOUT
+
+--------------------------------------------------------------*/
+
+/*-------------------------------------------------------------- 
+ # STRUCTURE AND LAYOUT
+--------------------------------------------------------------*/
+#page { overflow: hidden; }
+
+// Left-sidebar
+body.left-sidebar .content-area {
+	float:right;
+}
+
+/* Full-Width & Full-Screen */
+body.full-width .content-area,
+body.full-width .widget-area,
+body.full-screen .site-content .container {
+	float:none;
+	max-width: 100%;
+	width:100%;
+}
