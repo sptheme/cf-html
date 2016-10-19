@@ -255,7 +255,7 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   color: #373a3c;
@@ -3843,7 +3843,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -3922,7 +3922,7 @@ button.close {
   display: block;
   max-width: 276px;
   padding: 1px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6872,12 +6872,24 @@ a.text-danger:focus, a.text-danger:hover {
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-
+# TYPOGRAPHY
 # STRUCTURE AND LAYOUT
+# HEADER
+	# Site tools
+	# Quick contact
+	# Site navigation
+	# Mobile nav trigger	
 
 --------------------------------------------------------------*/
 /*-------------------------------------------------------------- 
- # STRUCTURE AND LAYOUT
+# TYPOGRAPHY
+--------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Montserrat", sans-serif; }
+
+/*-------------------------------------------------------------- 
+# STRUCTURE AND LAYOUT
 --------------------------------------------------------------*/
 #page {
   overflow: hidden; }
@@ -6892,3 +6904,176 @@ body.full-screen .site-content .container {
   float: none;
   max-width: 100%;
   width: 100%; }
+
+/*-------------------------------------------------------------- 
+# HEADER
+--------------------------------------------------------------*/
+.masthead {
+  background-color: #01182c;
+  height: 60px; }
+
+/* # Site tools */
+.site-tools {
+  float: right; }
+
+.site-tools {
+  padding-top: 18px; }
+
+.site-tools ul {
+  overflow: hidden;
+  padding-left: 0;
+  margin-bottom: 0; }
+
+.site-tools li {
+  display: block;
+  float: left;
+  padding: 0 1rem; }
+
+.site-tools li a {
+  color: #ffffff; }
+
+/* Quick contact */
+.quick-contact-top {
+  float: right;
+  color: #ffffff;
+  padding-top: 2px;
+  margin-right: 2.250rem; }
+
+.quick-contact-top span {
+  font-size: 12px; }
+
+.quick-contact-top a {
+  font-size: 12px;
+  color: #ff9703; }
+
+/* # Site navigation */
+.site-navigation {
+  float: left;
+  margin-top: 12px; }
+
+.site-navigation .nav-link {
+  padding: .25rem 0;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  border-bottom: .188rem solid transparent; }
+
+.site-navigation .nav-link:hover,
+.site-navigation .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, 0.25); }
+
+.site-navigation .nav-link + .nav-link {
+  margin-left: 1rem; }
+
+.site-navigation .active {
+  color: #fff;
+  border-bottom-color: #fff; }
+
+/* Header > Media screen */
+@media (min-width: 768px) {
+  .site-branding {
+    float: left;
+    margin-right: 2.250rem;
+    margin-bottom: 0;
+    padding-top: 12px; } }
+
+/* # Mobile nav trigger */
+.cf-nav-trigger {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 60px;
+  width: 50px;
+  background-color: #03263d; }
+
+.cf-nav-trigger .cf-menu-text {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  /* hide the text on small devices */
+  display: none; }
+
+.cf-nav-trigger .cf-menu-icon {
+  /* this span is the central line of the menu icon */
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 18px;
+  height: 2px;
+  background-color: white;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  /* these are the upper and lower lines in the menu icon */ }
+
+.cf-nav-trigger .cf-menu-icon::before, .cf-nav-trigger .cf-menu-icon:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: white;
+  right: 0;
+  -webkit-transition: -webkit-transform .3s, top .3s, background-color 0s;
+  -moz-transition: -moz-transform .3s, top .3s, background-color 0s;
+  transition: transform .3s, top .3s, background-color 0s; }
+
+.cf-nav-trigger .cf-menu-icon::before {
+  top: -5px; }
+
+.cf-nav-trigger .cf-menu-icon::after {
+  top: 5px; }
+
+.cf-nav-trigger .cf-menu-icon.is-clicked {
+  background-color: rgba(255, 255, 255, 0); }
+
+.cf-nav-trigger .cf-menu-icon.is-clicked::before, .cf-nav-trigger .cf-menu-icon.is-clicked::after {
+  background-color: white; }
+
+.cf-nav-trigger .cf-menu-icon.is-clicked::before {
+  top: 0;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg); }
+
+.cf-nav-trigger .cf-menu-icon.is-clicked::after {
+  top: 0;
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg); }
+
+@media (min-width: 768px) {
+  .cf-nav-trigger {
+    width: 100px;
+    padding-left: 1em;
+    background-color: transparent;
+    height: 30px;
+    line-height: 30px;
+    right: 2.2em;
+    top: 50%;
+    bottom: auto;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); }
+  .cf-nav-trigger .cf-menu-text {
+    display: inline-block; }
+  .cf-nav-trigger .cf-menu-icon {
+    left: auto;
+    right: 1em;
+    -webkit-transform: translateX(0) translateY(-50%);
+    -moz-transform: translateX(0) translateY(-50%);
+    -ms-transform: translateX(0) translateY(-50%);
+    -o-transform: translateX(0) translateY(-50%);
+    transform: translateX(0) translateY(-50%); } }

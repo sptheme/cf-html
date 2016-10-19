@@ -16721,3 +16721,68 @@ var Popover = (function ($) {
   jQuery.fn.sidr = fnSidr;
 
 }());
+( function($) {
+	'use strict';
+
+	var spCustom = {
+		/**
+		 * Main init function
+		 *
+		 */
+		init : function() {
+			this.config();
+			this.bindEvents();
+		},
+
+		/**
+		 * Cache Elements
+		 *
+		 */
+		config : function() {
+
+			this.config = {
+				// Main
+				$window                 : $( window ),
+				$document               : $( document ),
+				$windowWidth            : $( window ).width(),
+				$windowHeight           : $( window ).height(),
+				$windowTop              : $( window ).scrollTop(),
+				$body                   : $( 'body' ),
+				$viewportWidth          : '',
+				$is_rtl                 : false,
+			};
+
+		},	
+
+		bindEvents : function() {
+			var self = this;
+
+			// Run on doucment ready
+			self.config.$document.on( 'ready', function() {
+				
+				// Site navigation - Menu toggle
+				$('.cf-nav-trigger').sidr({
+					name	: 'sidr-main',
+					source	: '#site-navigation', //#mobile-menu-alternative
+					side	: 'right',
+					speed	: 300,
+					onOpen	: function() {
+						$('.cf-menu-icon').addClass('is-clicked');
+
+						$('#page').on( 'click', function( event ) {
+							$.sidr( 'close', 'sidr-main' );
+							return false;
+						} );
+					},
+					onClose : function() {
+						$('.cf-menu-icon').removeClass('is-clicked');
+					}
+				});
+
+			} );
+		}
+	}
+
+	spCustom.init();
+	 
+}) ( jQuery );	

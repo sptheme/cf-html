@@ -10,26 +10,57 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
+        <!-- For development stage -->
+        <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400,400i,600" rel="stylesheet"> -->
+
         <link rel="stylesheet" href="css/theme.min.css">        
     </head>
 <body class="full-screen">
 	<div id="page" class="hfeed site">
-		<header id="header" class="site-header" role="banner">
-			<nav class="navbar navbar-dark bg-inverse">
-			    <a class="navbar-brand" href="#">Project name</a>
+		<header id="masthead" class="site-header masthead container-fluid" role="banner">
+
+			<h3 id="site-logo" class="site-branding">
+				<a href="home.html" title="Cotafer" rel="home" class="main-logo">
+					<img src="images/logo.png" />
+				</a>
+			</h3><!-- .site-branding -->
+
+			<nav id="site-navigation" class="nav nav-inline site-navigation hidden-md-down">
 			    <ul class="nav navbar-nav">
-			        <li class="nav-item active">
-			            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			        <li class="nav-item">
+			            <a class="nav-link active" href="#">Hotel</a>
 			        </li>
 			        <li class="nav-item">
-			            <a class="nav-link" href="#">About</a>
+			            <a class="nav-link" href="#">Home stay</a>
 			        </li>
 			        <li class="nav-item">
-			            <a class="nav-link" href="#">Contact</a>
+			            <a class="nav-link" href="#">Travel</a>
 			        </li>
-			        <li class="nav-item"><a id="simple-menu" href="#sidr" class="nav-link">Toggle menu</a></li>
+			        <li class="nav-item">
+			            <a class="nav-link" href="#">Charity</a>
+			        </li>
 			    </ul>
-			</nav>
+			</nav> <!-- .navbar-nav -->
+
+			<div class="site-tools hidden-sm-down">
+				<ul>
+					<li class="languages"><a href="#">EN</a></li>
+					<li class="currency"><a href="#">USD</a></li>
+					<li class="register"><a href="#">Register</a></li>
+					<li class="login"><a href="#">Sign In</a></li>
+				</ul>
+			</div> <!-- .site-tool -->
+
+			<div class="quick-contact-top hidden-md-down">
+				<span>We help you on your way !</span><h4>855 77 999 123 <span>or</span> <a href="#"><span>Live chat</span></a></h4>
+			</div> <!-- .quick-contact-top -->
+
+			<div id="mobile-menu" class="hidden-xl-up">
+				<a class="cf-nav-trigger" href="#">
+					<span class="cf-menu-text">Menu</span><span class="cf-menu-icon"></span>
+				</a>
+			</div> <!-- #mobile-menu -->
+
 		</header> <!-- #header -->
 
 		<div class="jumbotron">
@@ -69,16 +100,7 @@
 
 	</div> <!-- #page -->
 
-	<div id="sidr">
-		<ul>
-			<li><a href="#">Hotel</a></li>
-			<li><a href="#">Homestay</a></li>
-			<li><a href="#">Travel Agency</a></li>
-			<li><a href="#">Charity</a></li>
-		</ul>
-	</div> <!-- #sidr -->
-
 	<script src="js/theme.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="js/main.min.js"></script>
 </body>
 </html>

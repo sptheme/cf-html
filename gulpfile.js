@@ -142,11 +142,19 @@ gulp.task('scripts', function() {
     basePaths.dev + 'js/bootstrap4/bootstrap.js', 
     // End - All BS4 stuff
 
-    basePaths.dev + 'js/sidr/jquery.sidr.min.js', 
+    basePaths.dev + 'js/sidr/jquery.sidr.min.js',
     ])
     .pipe(concat('theme.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./js/'));
+
+  gulp.src([
+    // main script
+    basePaths.dev + 'js/main.js',
+    ])
+    .pipe(concat('main.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./js/'));  
 
   gulp.src([
     basePaths.dev + 'js/jquery.js', // Must be loaded before BS4
@@ -159,6 +167,9 @@ gulp.task('scripts', function() {
     // End - All BS4 stuff
 
     basePaths.dev + 'js/sidr/jquery.sidr.js', 
+
+    // main script
+    basePaths.dev + 'js/main.js',
     ])
     .pipe(concat('theme.js'))
     .pipe(gulp.dest('./js/'));
