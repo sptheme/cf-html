@@ -10,6 +10,8 @@
 	# Quick contact
 	# Site navigation
 	# Mobile nav trigger	
+# UTILITIES
+	# Flag icons
 
 --------------------------------------------------------------*/
 
@@ -48,32 +50,24 @@ body.full-screen .site-content .container {
 	height:60px;
 }
 
+/* Navbar brand */
+.navbar-header {
+	margin-right: 2.25rem;
+}
+
 /* # Site tools */
-.site-tools {
-	float: right;
-}
-.site-tools {
-	padding-top: 18px;
-}
-.site-tools ul {
-	overflow: hidden;
-	padding-left: 0;
-	margin-bottom: 0;
-}
-.site-tools li {
-	display:block;
-	float: left;
-	padding: 0 1rem;
-}
-.site-tools li a {
+.site-tools > li > a {
 	color: #ffffff;
 }
+.site-tools .dropdown-menu {
+	font-size: 0.875rem;
+}
+
 /* Quick contact */
 .quick-contact-top {
-	float: right;
 	color:#ffffff;
-	padding-top: 2px;
 	margin-right: 2.250rem;	
+	margin-top: -5px;
 }
 .quick-contact-top span {
 	font-size: 12px;
@@ -85,19 +79,18 @@ body.full-screen .site-content .container {
 
 /* # Site navigation */
 .site-navigation {
-	float: left;
-	margin-top:12px;
+	margin-top:6px;
 }
 .site-navigation .nav-link {
   padding: .25rem 0;
-  color: rgba(255,255,255,.5);
+  color: rgba(255,255,255,.9);
   background-color: transparent;
   border-bottom: .188rem solid transparent;
 }
 
 .site-navigation .nav-link:hover,
 .site-navigation .nav-link:focus {
-  border-bottom-color: rgba(255,255,255,.25);
+  border-bottom-color: rgba(255,255,255,.9);
 }
 
 .site-navigation .nav-link + .nav-link {
@@ -224,4 +217,39 @@ body.full-screen .site-content .container {
     -o-transform: translateX(0) translateY(-50%);
     transform: translateX(0) translateY(-50%);
   }
+}
+
+
+/*-------------------------------------------------------------- 
+# UTILITIES
+--------------------------------------------------------------*/
+
+/* # Flag icons */
+.icon-flag-cn,
+.icon-flag-gb,
+.icon-flag-kh {
+	background: url(../images/countries-flags.png) no-repeat;
+	display: inline-block;
+	margin-right: 5px;
+	margin-top: 2px;
+	line-height: 14px;
+	vertical-align: text-top;
+}
+
+.icon-flag-gb{
+	background-position: -1156px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.icon-flag-cn{
+	background-position: -714px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.icon-flag-kh{
+	background-position: -1734px 0;
+	width: 16px;
+	height: 16px;
 }
