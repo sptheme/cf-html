@@ -44,7 +44,7 @@
 					            <a class="nav-link" href="#">Charity</a>
 					        </li>
 					    </ul>
-					</nav> <!-- .navbar-nav -->
+					</nav> <!-- .site-navigation -->
 
 					
 					<ul class="nav navbar-nav float-md-right site-tools">
@@ -66,8 +66,12 @@
 								<li><a href="#" class="dropdown-item"><i class="fa fa-rub"></i> Russian Ruble</a></li>
 							</ul>
 						</li>
-						<li class="nav-item navbar-register"><a href="#"  class="nav-link">Register</a></li>
-						<li class="nav-item navbar-login"><a href="#" class="nav-link">Sign In</a></li>
+						<li class="nav-item navbar-register">
+							<button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#signup-modal">Register</button>
+						</li>
+						<li class="nav-item navbar-login">
+							<button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#signin-modal">Sign In</button>
+						</li>
 					</ul>
 
 					<div class="quick-contact-top float-md-right hidden-lg-down">
@@ -86,7 +90,7 @@
 
 		<div class="jumbotron">
 			<h1 class="display-3">Jumbotron heading</h1>
-			<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+			<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. <a href="#" title="">Color hover</a></p>
 			<p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
 		</div>
 
@@ -120,6 +124,81 @@
 		</footer> <!-- .site-footer -->
 
 	</div> <!-- #page -->
+
+	<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="container-fluid">
+						<div class="sign-fb-gplus text-xs-center">
+							<div class="row">
+								<div class="col-sm-6"><a href="#" title="Sign up with Facebook" class="btn btn-sm btn-block btn-facebook"><i class="fa fa-facebook"></i> Facebook</a></div>
+								<div class="col-sm-6"><a href="#" title="Sign up with Google+" class="btn btn-sm btn-block btn-google-plus"><i class="fa fa-google-plus"></i> Google+</a></div>
+							</div> <!-- .row -->
+						</div>
+						<p class="text-xs-center">or with your email</p>
+						<form class="user-form-signup">
+				            <div class="form-group">
+								<label for="email" class="form-control-label">Email Address:</label>
+								<input type="email" class="form-control" id="email" name="email">
+				            </div>
+				            <div class="form-group">
+								<label for="pass" class="form-control-label">Password:</label>
+								<input type="password" class="form-control" id="pass">
+				            </div>
+				            <div class="form-group">
+				            	<label class="form-check-label">
+				            	<input class="form-check-input" type="checkbox" name="agreeterm"> <small class="form-text text-muted">By creating an account, you're agreeing with our 
+	<a href="#" title="">Terms and Conditions</a> and <a href="#" title="">Privacy Statement</a>.</small>
+								</label>
+				            </div>
+				            <div class="form-group text-xs-center">
+				            	<button type="submit" class="btn btn-primary btn-block">Create an account</button>
+				            </div>
+				        </form>
+				    </div> <!-- .container-fluid -->
+				</div> <!-- .modal-body -->
+				<div class="modal-footer">
+					<p class="text-xs-center"><small>Sign in to reveal exclusive deals and book faster! <a id="signin-alternative" href="#signin-modal" data-toggle="modal">Sign in</a></small></p>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /#signup-modal -->
+
+	<div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="container-fluid">
+						<div class="sign-fb-gplus text-xs-center">
+							<div class="row">
+								<div class="col-sm-6"><a href="#" title="Sign in with Facebook" class="btn btn-sm btn-block btn-facebook"><i class="fa fa-facebook"></i> Facebook</a></div>
+								<div class="col-sm-6"><a href="#" title="Sign in with Google+" class="btn btn-sm btn-block btn-google-plus"><i class="fa fa-google-plus"></i> Google+</a></div>
+							</div> <!-- .row -->
+						</div>
+						<p class="text-xs-center">or with your email</p>
+						<form class="user-form-signin">
+							<div class="form-group">
+								<label for="email" class="form-control-label">Email Address:</label>
+								<input type="email" class="form-control" id="email" name="email" placeholder="your email address">
+				            </div>
+				            <div class="form-group">
+								<label for="pass" class="form-control-label">Password:</label>
+								<input type="password" class="form-control" id="pass">
+								<a href="#" class="text-xs-right d-block" title=""><small class="form-text text-muted">Forgot password</small></a>
+				            </div>
+				            <div class="form-group text-xs-center">
+				            	<button type="submit" class="btn btn-primary btn-block">Sign in</button>
+				            </div>
+				        </form>
+				    </div> <!-- .container-fluid -->
+				</div> <!-- .modal-body -->
+				<div class="modal-footer">
+					<p class="text-xs-center"><small>Not a member yet? <a id="signup-alternative" href="#signup-modal" data-toggle="modal">Create account</a></small></p>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /#signin-modal -->
 
 	<script src="js/theme.min.js"></script>
 	<script src="js/main.min.js"></script>

@@ -4,6 +4,7 @@
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # TYPOGRAPHY
+# ELEMENTS
 # STRUCTURE AND LAYOUT
 # HEADER
 	# Site tools
@@ -12,6 +13,7 @@
 	# Mobile nav trigger	
 # UTILITIES
 	# Flag icons
+	# Socials
 
 --------------------------------------------------------------*/
 
@@ -21,6 +23,16 @@
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: $font-family-montserrat;
+}
+
+/*-------------------------------------------------------------- 
+# ELEMENTS
+--------------------------------------------------------------*/
+a:hover {
+	color: $link-hover-color;
+}
+a:focus {
+	outline:0;
 }
 
 /*-------------------------------------------------------------- 
@@ -219,6 +231,22 @@ body.full-screen .site-content .container {
   }
 }
 
+/* # Signin Facbook and Google+ */
+.user-form-signin fieldset {
+	border-top:1px solid #dddddd;
+}
+.sign-fb-gplus {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.sign-fb-gplus .btn {
+	margin-bottom: 10px;
+}
+@media (min-width: 576px) {
+	.sign-fb-gplus .btn {
+		margin-bottom: 0;
+	}
+}
 
 /*-------------------------------------------------------------- 
 # UTILITIES
@@ -252,4 +280,24 @@ body.full-screen .site-content .container {
 	background-position: -1734px 0;
 	width: 16px;
 	height: 16px;
+}
+
+/* # Socials */
+.btn-facebook {
+	background: #43549a;
+	color:#ffffff;
+}
+	.btn-facebook:hover {
+		background: #3f4c8e;
+	}
+.btn-google-plus {
+	background: #e24c3b;
+	color:#ffffff;
+}
+	.btn-google-plus:hover {
+		background: #c64133;
+	}
+.btn-facebook, .btn-facebook:hover,
+.btn-google-plus, .btn-google-plus:hover {
+	color:#ffffff;
 }
