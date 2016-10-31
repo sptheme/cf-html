@@ -23,6 +23,7 @@
   "homepage": "https://github.com/sptheme/cf-html#readme",
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.4",
+    "bootstrap-datepicker": "^1.6.4",
     "browser-sync": "^2.16.0",
     "font-awesome": "^4.6.3",
     "gulp": "^3.9.1",

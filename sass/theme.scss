@@ -5,6 +5,9 @@
 @import "assets/font-awesome"; // <------- Font Awesome Icon font
 @import "assets/sidr"; // <------- Sidr responisve side menu
 
+// Form plugin stuff
+@import "../src/css/bootstrap-datepicker/bootstrap-datepicker3"; // <------- Boostrap Datepicker
+
 
 // Any additional imported files //
 @import "theme/theme";  // <--------- Thats where you can add your own design. Thats your part!

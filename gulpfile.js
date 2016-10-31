@@ -143,18 +143,23 @@ gulp.task('scripts', function() {
     // End - All BS4 stuff
 
     basePaths.dev + 'js/sidr/jquery.sidr.min.js',
+
+    // Start Form plugin stuff
+    basePaths.dev + 'js/bootstrap-datepicker/bootstrap-datepicker.min.js', 
+    // End - Form plugin stuff
+
     ])
     .pipe(concat('theme.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./js/'));
 
-  gulp.src([
-    // main script
+  // main script
+  /*gulp.src([
     basePaths.dev + 'js/main.js',
     ])
     .pipe(concat('main.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./js/'));  
+    .pipe(gulp.dest('./js/'));  */
 
   gulp.src([
     basePaths.dev + 'js/jquery.js', // Must be loaded before BS4
@@ -167,6 +172,10 @@ gulp.task('scripts', function() {
     // End - All BS4 stuff
 
     basePaths.dev + 'js/sidr/jquery.sidr.js', 
+
+    // Start Form plugin stuff
+    basePaths.dev + 'js/bootstrap-datepicker/bootstrap-datepicker.js', 
+    // End - Form plugin stuff
 
     // main script
     basePaths.dev + 'js/main.js',
@@ -218,7 +227,7 @@ gulp.task('copy-assets', function() {
 
 // Copy Tether CSS files
     gulp.src(basePaths.node + 'tether/dist/css/*.css')
-        .pipe(gulp.dest(basePaths.dev + '/css'));
+        .pipe(gulp.dest(basePaths.dev + '/css/tether'));
 
 // Copy Sidr JS files
     gulp.src(basePaths.node + 'sidr/dist/*.js')
@@ -229,10 +238,22 @@ gulp.task('copy-assets', function() {
         .pipe(gulp.dest(basePaths.dev + '/sass/sidr'));
 
 // Copy Sidr CSS files
-    gulp.src(basePaths.node + 'sidr/src/stylesheets/*.css')
-        .pipe(gulp.dest(basePaths.dev + '/css'));        
+    gulp.src(basePaths.node + 'sidr/dist/stylesheets/*.css')
+        .pipe(gulp.dest(basePaths.dev + '/css/sidr'));        
 
 });
+
+// Copy Boostrap Datepicker JS files
+    gulp.src(basePaths.node + 'bootstrap-datepicker/dist/js/*.js')
+        .pipe(gulp.dest(basePaths.dev + '/js/bootstrap-datepicker/'));
+
+// Copy Boostrap Datepicker LESS files
+    gulp.src(basePaths.node + 'bootstrap-datepicker/less/*.less')
+        .pipe(gulp.dest(basePaths.dev + '/less/bootstrap-datepicker'));
+
+// Copy Boostrap Datepicker CSS files
+    gulp.src(basePaths.node + 'bootstrap-datepicker/dist/css/*.css')
+        .pipe(gulp.dest(basePaths.dev + '/css/bootstrap-datepicker'));
 
 // Run 
 // gulp dist 

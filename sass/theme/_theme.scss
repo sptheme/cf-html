@@ -11,7 +11,9 @@
 	# Quick contact
 	# Site navigation
 	# Mobile nav trigger	
-# UTILITIES
+# TEMPLATES
+	# Homepage or landing page
+# TEMPLATES
 	# Flag icons
 	# Socials
 
@@ -58,7 +60,7 @@ body.full-screen .site-content .container {
 # HEADER
 --------------------------------------------------------------*/
 .masthead {
-	background-color:#01182c;
+	background-color:$dark-blue;
 	height:60px;
 }
 
@@ -68,11 +70,17 @@ body.full-screen .site-content .container {
 }
 
 /* # Site tools */
+.site-tools {
+	margin-right: 3.5rem;
+}
 .site-tools > li > a {
 	color: #ffffff;
 }
 .site-tools .dropdown-menu {
 	font-size: 0.875rem;
+}
+.site-tools .btn {
+	border-radius: 24px;
 }
 
 /* Quick contact */
@@ -86,7 +94,7 @@ body.full-screen .site-content .container {
 }
 .quick-contact-top a {
 	font-size: 12px;
-	color: #ff9703;
+	color: $orange;
 }
 
 /* # Site navigation */
@@ -114,14 +122,73 @@ body.full-screen .site-content .container {
   border-bottom-color: #fff;
 }
 
+/* Search form */
+.search-container {
+	background: #ffffff;
+}
+.search-form .input-group {
+	width: 100%;
+}
+.search-form .form-group {
+	padding:0;
+}
+
+/* Guest picker */
+.guest-picker-wrapper {
+	position:relative;
+}
+.btn-guest-picker {
+	background: #fff;
+}
+.guest-picker-type {
+	background: #fff;
+	position: absolute;
+	right:0;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.15),0 0 0 1px rgba(0,0,0,0.07);
+	border-radius: 3px;
+	width: 320px;
+	min-width: 280px;
+	font-size: 16px;
+	padding: 0 15px;
+	text-align: left;
+	line-height: 1em;
+	z-index: 3000;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: opacity .4s, visibility .4s;
+	transition: opacity .4s, visibility .4s;
+}
+	/* Trigger guest picker */
+	.guest-picker-wrapper.guest-open .guest-picker-type {
+	  opacity: 1;
+	  visibility: visible;
+	}
+
+.guest-picker-type .row {
+	padding: .3rem 0;
+    margin: 0;
+    border-bottom: #dce0e0 solid 1px;
+}
+.guest-picker-type .guest-type-label {	
+	line-height:30px;
+}
+.btn-increament-container .btn {
+	padding:.3rem .5rem;
+}
+
 /* Header > Media screen */
 @media (min-width: 768px) {
-  .site-branding {
-    float: left;
-    margin-right: 2.250rem;
-    margin-bottom: 0;
-    padding-top: 12px;
-  }  
+	.site-branding {
+	    float: left;
+	    margin-right: 2.250rem;
+	    margin-bottom: 0;
+	    padding-top: 12px;
+	}  
+}
+@media (min-width: 992px) {
+	.site-tools {
+		margin-right: 0;
+	}
 }
 
 /* # Mobile nav trigger */
@@ -201,7 +268,7 @@ body.full-screen .site-content .container {
   transform: rotate(225deg);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .cf-nav-trigger {
     width: 100px;
     padding-left: 1em;
@@ -245,6 +312,85 @@ body.full-screen .site-content .container {
 @media (min-width: 576px) {
 	.sign-fb-gplus .btn {
 		margin-bottom: 0;
+	}
+}
+
+/*-------------------------------------------------------------- 
+# TEMPLATES
+--------------------------------------------------------------*/
+/* # Homepage or landing page */
+html, body {
+	height: 100%;
+	background-color: $dark-blue;
+}	
+.homepage #page {
+	height: 100%;
+	min-height: 100%;
+	width: 100%;
+	position: relative;
+}
+.homepage .masthead {
+	position: relative;
+	width:100%;
+	z-index: 2;
+}
+.cover {
+	width: 100%;
+    height: 100%;
+    min-height: 100%;
+    background: $dark-blue;
+}
+.cover-container {
+	position: relative;
+	display: table;
+    width: inherit;
+    height: inherit;
+}
+.cover-inner {
+	display: table-cell;
+	vertical-align: top;
+}
+.cover-header {
+	text-align:center;
+	color: #ffffff;
+	text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+	padding: 0 1.5rem;
+	margin-right: auto;
+    margin-left: auto;
+}
+.background-overlay {
+	display:block;
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	height: 100%; 
+	width: 100%; 
+	background: rgba(0,0,0,.5);
+}
+/* # Footer - mastfoot */
+.homepage .mastfoot {
+	color:rgba(255,255,255,.7);
+	width: 100%;
+	text-align: center;
+}
+.homepage .mastfoot a {
+	color: $orange;
+}
+
+@media (min-width:768px) {
+	.homepage .masthead {
+		position: fixed;
+		top: 0;
+	}
+	.cover-inner {
+		vertical-align: middle;
+	}
+	.cover-header {
+		width: 720px;
+	}
+	.homepage .mastfoot {
+		position: fixed;
+		bottom: 0;
 	}
 }
 
