@@ -71,18 +71,18 @@
 		},
 
 		userModalSwitcher : function(){
-			var userSignin = $('#signup-alternative'),
-			userSignup = $('#signin-alternative');
+			var switchSignup = $('#signup-alternative'),
+			switchSignin = $('#signin-alternative');
 
-			if ( userSignin.length ) {
-				userSignin.click( function( event ) {
+			if ( switchSignup.length ) {
+				switchSignup.click( function( event ) {
 					event.preventDefault();
 					$('#signin-modal').modal('toggle');
 				});	
 			}
 
-			if ( userSignup.length ) {
-				userSignup.click( function( event ) {
+			if ( switchSignin.length ) {
+				switchSignin.click( function( event ) {
 					event.preventDefault();
 					$('#signup-modal').modal('toggle');
 				});
@@ -91,20 +91,42 @@
 
 		mainSearchForm : function() {
 			var dateRange = $('.date-range input'),
+			guestAdult = 1,
+			guestChildren = 0,
+			guestInfants = 0,
+			guestQuantity = (Number(guestAdult) + Number(guestChildren) + Number(guestInfants)),
 			guestPickerWrapper = $('.guest-picker-wrapper'),
-			guestTrigger = $('.guest-picker-trigger');
+			guestPickerType = $('.guest-picker-type'),
+			guestTrigger = $('.guest-picker-trigger'),
+			guestTotal = guestTrigger.eq(0);
 
 			// Date range picker
 			dateRange.each(function() {
 			    $(this).datepicker("clearDates");
 			});
 
-			// Guest picker
+			// Set default guest number
+			quickGuestUpdate();
+			updateGuestTotal(guestQuantity);
+
+			// Guest picker trigger
 			guestTrigger.on( 'click', function( event ) {
 				event.preventDefault();
 				toggleGuest();
 
 			} );
+
+			// Decreament guest type button trigger
+			guestPickerType.on('click', '.btn-decreament', function(event){
+				event.preventDefault();
+				updateGuestCount($(event.target).parents('.btn-count-container').parent(), 'decreament');
+			});
+
+			// Increament guest type button trigger
+			guestPickerType.on('click', '.btn-increament', function(event){
+				event.preventDefault();
+				updateGuestCount($(event.target).parents('.btn-count-container').parent(), 'increament');
+			});
 
 			//close guest picker when click parent container
 			$('.cover-inner').on('click', function(event){
@@ -119,6 +141,75 @@
 				} else {
 					guestPickerWrapper.addClass('guest-open');
 				}
+			}
+
+			function updateGuestCount(guestType, countType){
+				if ( countType == 'decreament' ) {
+					if ( guestType.hasClass('guest-type-adult') ) {
+						if ( guestAdult == 1 ) return;
+						guestAdult--;
+						guestType.children('.guest-type-label').find("strong").text(guestAdult + guestLabelUpdate('adults'));
+					}
+					if ( guestType.hasClass('guest-type-children') ) {
+						if ( guestChildren == 0 ) return;
+						guestChildren--;
+						guestType.children('.guest-type-label').find("strong").text(guestChildren + guestLabelUpdate('children'));
+					}
+					if ( guestType.hasClass('guest-type-infants') ) {
+						if ( guestInfants == 0 ) return;
+						guestInfants--;
+						guestType.children('.guest-type-label').find("strong").text(guestInfants + guestLabelUpdate('infants'));
+					}
+				} else {
+					if ( guestType.hasClass('guest-type-adult') ) {
+						if ( guestAdult >= 10 ) return;
+						guestAdult++;
+						guestType.children('.guest-type-label').find("strong").text(guestAdult + guestLabelUpdate('adults'));
+					}
+					if ( guestType.hasClass('guest-type-children') ) {
+						if ( guestChildren >= 5 ) return;
+						guestChildren++;
+						guestType.children('.guest-type-label').find("strong").text(guestChildren + guestLabelUpdate('children'));
+					}
+					if ( guestType.hasClass('guest-type-infants') ) {
+						if ( guestInfants >= 5 ) return;
+						guestInfants++;
+						guestType.children('.guest-type-label').find("strong").text(guestInfants + guestLabelUpdate('infants'));
+					}
+				}
+				guestQuantity = (Number(guestAdult) + Number(guestChildren) + Number(guestInfants));
+				updateGuestTotal(guestQuantity);
+			}
+
+			/*function guestTypeCount(guestType, guestAmount) {
+				guestTypeContainer.children('.guest-type-label').find("strong").text(guestAmount + guestLabelUpdate('infants'));
+			}*/
+
+			function guestLabelUpdate(labelType) {
+				switch(labelType) {
+				    case "adults":
+				        return (guestAdult > 1) ? ' Adults' : ' Adult';
+				        break;
+				    case "children":
+				        return (guestChildren > 1) ? ' Children' : ' Child';
+				        break;
+				    case "infants":
+				        return (guestInfants > 1) ? ' Infants' : ' Infant';
+				        break;
+				    default:
+				        break;
+				}
+			}
+
+			function quickGuestUpdate() {
+				$('.guest-type-adult').children('.guest-type-label').find("strong").text(guestAdult + guestLabelUpdate('adults'));
+				$('.guest-type-children').children('.guest-type-label').find("strong").text(guestChildren + guestLabelUpdate('children'));
+				$('.guest-type-infants').children('.guest-type-label').find("strong").text(guestInfants + guestLabelUpdate('infants'));
+			}
+
+			function updateGuestTotal(quantity) {
+				var guestLabel = (quantity > 1) ? ' Guests' : ' Guest';
+				guestTotal.text(quantity + guestLabel);
 			}
 		}
 
