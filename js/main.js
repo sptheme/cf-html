@@ -104,6 +104,19 @@
 			dateRange.each(function() {
 			    $(this).datepicker("clearDates");
 			});
+			$('#checkin').on("changeDate", function(event) {
+			    $('#checkin-hidden').val(
+			        $('#checkin').datepicker('getFormattedDate')
+			    );		
+			    $('#checkin').datepicker('hide');
+			    $('#checkout').datepicker('show');	    
+			});
+			$('#checkout').on("changeDate", function(event) {
+			    $('#checkout-hidden').val(
+			        $('#checkout').datepicker('getFormattedDate')
+			    );
+			    $('#checkout').datepicker('hide');	
+			});
 
 			// Set default guest number
 			quickGuestUpdate();
@@ -180,10 +193,6 @@
 				guestQuantity = (Number(guestAdult) + Number(guestChildren) + Number(guestInfants));
 				updateGuestTotal(guestQuantity);
 			}
-
-			/*function guestTypeCount(guestType, guestAmount) {
-				guestTypeContainer.children('.guest-type-label').find("strong").text(guestAmount + guestLabelUpdate('infants'));
-			}*/
 
 			function guestLabelUpdate(labelType) {
 				switch(labelType) {

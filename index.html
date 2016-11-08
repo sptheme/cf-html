@@ -96,67 +96,66 @@
 
 				<div class="container">
 					<header class="cover-header">
-						<h1 class="cover-heading">Start your experience today</h1>
+						<h1>Start your experience today</h1>
 						<p class="lead">Cotafer guarantees the best prices for any type of property, from small, family-run bed, apartments and five-star luxury suites  from both the leisure and business sectors worldwide.</p>
 					</header> <!-- .cover-header -->
 
 					<div class="search-container">
 						<form class="form-inline search-form">
 							<div class="row">
-								<div class="form-group col-md-5">
+								<div class="form-group col-md-4 ss-where">
 									<label class="sr-only" for="ss">Destination or Property name</label>
 									<div class="input-group">
-	      								<span class="input-group-addon"><i class="fa fa-binoculars"></i></span>								
+	      								<span class="input-group-addon"><i class="fa fa-crosshairs"></i></span>								
 		    							<input type="search" class="form-control form-control-lg" name="ss" placeholder="Destination or Property name">
 		    						</div>
 								</div>
-								<div class="form-group col-md-4">
+								<div class="form-group col-md-4 ss-when">
 									<label class="sr-only" for="ss">Check In and Out</label>
 									<div class="date-range input-group" id="datepicker">
-	      								<input type="text" class="form-control form-control-lg" name="startDate" placeholder="Check In">
+	      								<input type="text" id="checkin" class="form-control form-control-lg" name="checkIn" placeholder="Check In">
 	      								<span class="input-group-addon">to</span>
-										<input type="text" class="form-control form-control-lg" name="endDate" placeholder="Check Out">
+										<input type="text" id="checkout" class="form-control form-control-lg" name="checkOut" placeholder="Check Out">
 									</div>
 								</div>
 
-								<div class="form-group col-md-3">
+								<div class="form-group col-md-4 ss-guest">
 									<div class="input-group">
 										<label class="sr-only" for="guests">Guests</label>
-										<span class="input-group-addon"><i class="fa fa-user"></i></span>								
-										<!-- <input type="text" name="guests" class="form-control form-control-lg" value="1 Guest"> -->
 										<div class="guest-picker-wrapper">
+											<i class="fa fa-user"></i>
 											<a href="#" class="btn btn-lg btn-block guest-picker-trigger">
 												<span>1 guest</span>
-												<!-- <i class="fa fa-caret-down pull-right"></i> -->
 											</a>
+											<i class="fa fa-caret-down" aria-hidden="true"></i>
 											<div class="guest-picker-type">
 												<div class="guest-type-adult row">
-													<div class="col-sm-8 guest-type-label">
+													<div class="col-xs-8 guest-type-label">
 														<strong>1 Adult</strong>
 													</div>
-													<div class="col-sm-4 btn-count-container">
+													<div class="col-xs-4 btn-count-container">
 														<a href="#" class="btn btn-secondary btn-decreament"><i class="fa fa-minus"></i></a>
 														<a href="#" class="btn btn-secondary btn-increament"><i class="fa fa-plus"></i></a>
 													</div>
 												</div> <!-- .guest-type-adult -->
 
 												<div class="guest-type-children row">
-													<div class="col-sm-8 guest-type-label">
+													<div class="col-xs-8 guest-type-label">
 														<strong>0 Children</strong>
 														<small class="pull-right text-muted">age 2 - 12</small>
 													</div>
-													<div class="col-sm-4 btn-count-container">
+													<div class="col-xs-4 btn-count-container">
 														<a href="#" class="btn btn-secondary btn-decreament"><i class="fa fa-minus"></i></a>
 														<a href="#" class="btn btn-secondary btn-increament"><i class="fa fa-plus"></i></a>
 													</div>
 												</div> <!-- .guest-type-children -->
 
 												<div class="guest-type-infants row">
-													<div class="col-sm-8 guest-type-label">
+													<div class="col-xs-8 guest-type-label">
 														<strong>0 infants</strong>
 														<small class="pull-right text-muted">under 2</small>
 													</div>
-													<div class="col-sm-4 btn-count-container">
+													<div class="col-xs-4 btn-count-container">
 														<a href="#" class="btn btn-secondary btn-decreament"><i class="fa fa-minus"></i></a>
 														<a href="#" class="btn btn-secondary btn-increament"><i class="fa fa-plus"></i></a>
 													</div>
@@ -166,11 +165,13 @@
 										</div> <!-- .guest-picker-wrapper -->
 
 										<span class="input-group-btn">
-											<button type="submit" class="btn btn-primary btn-lg">Search</button>
+											<button type="submit" class="btn btn-primary btn-block btn-lg btn-search">Search</button>
 										</span>
 									</div>
 								</div>
 							</div> <!-- .row -->
+							<input type="hidden" id="checkin-hidden">
+							<input type="hidden" id="checkout-hidden">
 						</form>
 					</div> <!-- .search-container -->
 
